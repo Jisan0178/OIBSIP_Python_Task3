@@ -126,20 +126,6 @@ The interface can be switched from the **Settings** page.
 
 ---
 
-### 🖥️ User-Friendly GUI
-
-The application uses **Tkinter** to provide a graphical interface with:
-
-* Sidebar navigation
-* Generator page
-* History page
-* Settings page
-* Responsive password controls
-* Password strength visualization
-* Theme customization
-
----
-
 ## 🛠️ Technologies Used
 
 | Technology    | Purpose                                    |
@@ -150,32 +136,6 @@ The application uses **Tkinter** to provide a graphical interface with:
 | **string**    | Character sets                             |
 | **pyperclip** | Clipboard functionality                    |
 
-
----
-
-## ⚙️ Requirements
-
-Before running the application, make sure Python is installed.
-
-### Python
-
-Recommended:
-
-```text
-Python 3.9+
-```
-
-Check your Python version:
-
-```bash
-python --version
-```
-
-or:
-
-```bash
-py --version
-```
 
 ---
 
@@ -263,22 +223,6 @@ secrets.randbelow(number)
 are used to generate and shuffle password characters.
 
 This makes the password generation process more appropriate for security-sensitive use cases.
-
----
-
-## ⚠️ Privacy
-
-SecurePass Generator does **not** permanently store generated passwords.
-
-Password history is maintained only while the application is running.
-
-When the application is closed:
-
-```text
-Password History → Deleted from Memory
-```
-
-The application does not use a database or external server.
 
 ---
 
