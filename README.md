@@ -341,5 +341,3 @@ B.Tech — Computer Science and Engineering (AI & ML)
 ## 🎥 Demo Video
 
 - **Project Demonstration:** [Watch the Demo](https://lnkd.in/p/dUkjuUh9)
-
----
