@@ -1,62 +1,41 @@
 # 🔐 SecurePass Generator
 
-A secure desktop password generator built with **Python and Tkinter**.
-The application allows users to generate strong and customizable passwords using Python's cryptographically secure `secrets` module.
+A secure desktop password generator built with **Python and Tkinter**. SecurePass Generator helps users create strong, customizable passwords using Python's cryptographically secure `secrets` module.
 
-It also provides password strength analysis, password history, clipboard copying, ambiguous-character exclusion, and light/dark themes.
+The application includes password strength analysis, clipboard copying, password history, ambiguous-character exclusion, and light and dark themes.
 
 ---
 
 ## 📌 Project Overview
 
-**SecurePass Generator** is a desktop-based password generation application designed to make it easy to create strong and secure passwords.
+**SecurePass Generator** is a desktop application designed to make password creation simple and convenient. Users can customize password length and character types, generate passwords securely, check their estimated strength, and copy passwords directly to the clipboard.
 
-Users can customize:
-
-* Password length
-* Character types
-* Uppercase letters
-* Lowercase letters
-* Numbers
-* Symbols
-* Ambiguous character exclusion
-
-The application automatically evaluates password strength and provides suggestions when a generated password is weak.
-
----
+The application also provides a session-based history of recently generated passwords and suggestions for improving weak passwords.
 
 ## ✨ Features
 
-### 🔑 Secure Password Generation
+### 🔑 1. Secure Password Generation
 
-Passwords are generated using Python's `secrets` module, which is designed for security-sensitive applications.
+- Generates passwords using Python's `secrets` module.
+- Supports password lengths from **8 to 64 characters**.
+- Allows users to customize password composition.
+- Includes at least one character from each selected character type.
+- Securely shuffles generated password characters.
 
-The application:
+### 🔤 2. Customizable Character Types
 
-* Generates random passwords securely
-* Supports passwords from **8 to 64 characters**
-* Ensures at least one character from every selected character type
-* Uses secure random selection
-* Securely shuffles the generated password
+Users can select from four character categories:
 
----
+- **Uppercase letters:** `A-Z`
+- **Lowercase letters:** `a-z`
+- **Numbers:** `0-9`
+- **Symbols:** Special characters and punctuation
 
-### 🔤 Character Type Selection
+At least **two character types** must be selected before generating a password.
 
-Users can select different character types:
+### 🚫 3. Exclude Ambiguous Characters
 
-* **Uppercase Letters** — `A-Z`
-* **Lowercase Letters** — `a-z`
-* **Numbers** — `0-9`
-* **Symbols** — punctuation and special characters
-
-The application requires users to select at least **two character types**.
-
----
-
-### 🚫 Exclude Ambiguous Characters
-
-Users can enable an option to exclude characters that can easily be confused with each other.
+The application provides an option to exclude characters that can be easily confused when reading or typing passwords.
 
 Excluded characters:
 
@@ -64,106 +43,114 @@ Excluded characters:
 O 0 o I l 1
 ```
 
-This is useful when passwords need to be manually read or typed.
+This feature can make passwords easier to read and enter manually.
 
----
+### 💪 4. Password Strength Indicator
 
-### 💪 Password Strength Indicator
+SecurePass Generator estimates password strength using password length and the number of selected character types.
 
-The application evaluates the generated password based on:
+| Strength | Description |
+|---|---|
+| 🔴 WEAK | Does not meet the application's stronger-password criteria |
+| 🟠 MEDIUM | Meets the application's moderate-strength criteria |
+| 🟢 STRONG | Meets the application's stronger-password criteria |
 
-* Password length
-* Number of selected character types
+When a password is classified as weak, the application displays suggestions to help improve it.
 
-Password strength is categorized as:
+### 📋 5. Copy to Clipboard
 
-| Strength  | Description                                 |
-| --------- | ------------------------------------------- |
-| 🔴 WEAK   | Short password or limited character types   |
-| 🟠 MEDIUM | Reasonably strong password                  |
-| 🟢 STRONG | Long password with multiple character types |
+- Copies generated passwords to the clipboard.
+- Uses the `pyperclip` library.
+- Provides visual feedback after a successful copy, such as `✓ Copied`.
 
-For weak passwords, the application displays suggestions for improving password strength.
+### 🕒 6. Password History
 
----
+- Keeps the **last five generated passwords** during the current application session.
+- Allows users to view previously generated passwords.
+- Supports copying individual passwords.
+- Includes an option to clear the history.
 
-### 📋 Copy to Clipboard
+**Note:** Password history is stored in memory only. It is not permanently saved and is cleared when the application closes.
 
-Generated passwords can be copied directly to the clipboard using the **COPY** button.
+### 🌗 7. Light and Dark Themes
 
-The application uses the `pyperclip` library for clipboard functionality.
+The application supports two interface themes:
 
-After copying, the button temporarily changes to:
+- ☀️ Light Theme
+- 🌙 Dark Theme
 
-```text
-✓ Copied
-```
-
----
-
-### 🕒 Password History
-
-The application keeps the **last 5 generated passwords** during the current application session.
-
-Users can:
-
-* View previously generated passwords
-* Copy individual passwords
-* Clear the entire history
-
-> Password history is stored only in memory and is not saved permanently.
-
----
-
-### 🌗 Light and Dark Themes
-
-SecurePass Generator supports two themes:
-
-* ☀️ Light Theme
-* 🌙 Dark Theme
-
-The interface can be switched from the **Settings** page.
+Users can switch between themes through the Settings page.
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology    | Purpose                                    |
-| ------------- | ------------------------------------------ |
-| **Python**    | Main programming language                  |
-| **Tkinter**   | Graphical User Interface                   |
-| **secrets**   | Cryptographically secure random generation |
-| **string**    | Character sets                             |
-| **pyperclip** | Clipboard functionality                    |
-
+| Technology | Purpose |
+|---|---|
+| **Python** | Main programming language |
+| **Tkinter** | Building the graphical user interface |
+| **secrets** | Cryptographically secure random selection |
+| **string** | Providing character sets |
+| **pyperclip** | Copying passwords to the clipboard |
 
 ---
 
-## 📦 Installation
+## 📦 Installation and Setup
 
-### 1. Clone the repository
+### Prerequisites
+
+- Python 3 installed on your computer.
+- Git installed if you want to clone the repository.
+
+### Step 1: Clone the Repository
+
+Open your terminal or VS Code terminal and run:
 
 ```bash
 git clone https://github.com/Jisan0178/OIBSIP_Python_Task3.git
 ```
 
+### Step 2: Open the Project Folder
+
+```bash
+cd OIBSIP_Python_Task3
 ```
+
+### Step 3: Install Dependencies
+
+Install the required external library:
+
+```bash
+pip install -r requirements.txt
+```
+
+If you do not have a `requirements.txt` file, install the dependency directly:
+
+```bash
+pip install pyperclip
+```
+
+**Note:** Tkinter is included with many Python installations. On some Linux systems, it may need to be installed separately.
+
+---
 
 ## ▶️ Running the Application
 
-Run the Python file:
+Run the Python file from the project directory:
 
 ```bash
-python securepass.py
+python random_pass.py
 ```
 
-or:
+Alternatively, on Windows:
 
 ```bash
-py securepass.py
+py random_pass.py
 ```
 
 The SecurePass Generator window should open.
+
+**Important:** If your Python file has a different name, replace `securepass.py` with the actual filename.
 
 ---
 
@@ -173,40 +160,35 @@ The password generation process follows these steps:
 
 ```text
 Select Password Length
-        ↓
-Select Character Types
-        ↓
-Optional: Exclude Ambiguous Characters
-        ↓
-Create Character Sets
-        ↓
-Select At Least One Character
-from Each Selected Type
-        ↓
-Fill Remaining Characters
-        ↓
-Securely Shuffle Password
-        ↓
-Calculate Password Strength
-        ↓
-Display Password
-        ↓
-Copy Password to Clipboard
-        ↓
-Store in Session History
+         ↓
+Choose Character Types
+         ↓
+Optionally Exclude Ambiguous Characters
+         ↓
+Create the Available Character Sets
+         ↓
+Select Characters from Each Chosen Type
+         ↓
+Fill the Remaining Password Length
+         ↓
+Securely Shuffle the Characters
+         ↓
+Estimate Password Strength
+         ↓
+Display the Generated Password
+         ↓
+Copy the Password to the Clipboard
+         ↓
+Store It in Session History
 ```
 
 ---
 
-## 🔐 Security
+## 🔐 Security Information
 
-This project uses Python's:
+SecurePass Generator uses Python's built-in `secrets` module instead of the standard `random` module for password generation.
 
-```python
-secrets
-```
-
-module instead of the standard `random` module for password generation.
+The `secrets` module is designed for generating random values suitable for security-sensitive applications.
 
 For example:
 
@@ -214,25 +196,29 @@ For example:
 secrets.choice(character_set)
 ```
 
-and:
+selects a character using a cryptographically secure random source.
+
+The module also provides:
 
 ```python
 secrets.randbelow(number)
 ```
 
-are used to generate and shuffle password characters.
+which returns a securely selected integer below the specified limit.
 
-This makes the password generation process more appropriate for security-sensitive use cases.
+The application uses secure random selection and shuffling for password generation.
+
+**Security note:** The strength indicator is a simplified estimate, not a guarantee that a password is secure. The application does not check passwords against known data breaches. Avoid sharing generated passwords or storing them in publicly accessible files.
 
 ---
 
 ## 📊 Password Strength Logic
 
-The application uses password length and the number of selected character types to estimate strength.
+The application estimates password strength based on password length and the number of selected character types.
 
 ### Strong
 
-A password is considered strong when:
+A password is classified as strong when it meets either condition:
 
 ```text
 Length ≥ 16 AND 4 character types
@@ -241,55 +227,50 @@ Length ≥ 16 AND 4 character types
 or:
 
 ```text
-Length ≥ 14 AND 3+ character types
+Length ≥ 14 AND at least 3 character types
 ```
 
 ### Medium
 
-A password is considered medium when:
+A password is classified as medium when it meets either condition:
 
 ```text
-Length ≥ 12 AND 3+ character types
+Length ≥ 12 AND at least 3 character types
 ```
 
 or:
 
 ```text
-Length ≥ 10 AND 2+ character types
+Length ≥ 10 AND at least 2 character types
 ```
 
 ### Weak
 
-Passwords that do not satisfy the above conditions are classified as:
+Passwords that do not satisfy the above conditions are classified as weak.
 
-```text
-WEAK
-```
-
-> This strength indicator is a simple application-level estimate. It is not a replacement for a professional password-strength estimator or breach database.
+*These rules describe the intended strength criteria. Ensure they match the conditions implemented in your current Python code.*
 
 ---
 
-## 🧩 Main Python Concepts Used
+## 🧩 Python Concepts Demonstrated
 
-This project demonstrates several important Python concepts:
+This project demonstrates several Python programming concepts:
 
-* Variables
-* Functions
-* Conditional statements
-* Loops
-* Lists
-* Dictionaries
-* String handling
-* Exception handling
-* Lambda functions
-* Global variables
-* Tkinter widgets
-* Tkinter variables
-* Event-driven programming
-* Modules and imports
-* Secure random generation
-* Clipboard operations
+- Variables and data types
+- Functions
+- Conditional statements
+- Loops
+- Lists and dictionaries
+- String manipulation
+- Exception handling
+- Lambda functions
+- Global variables
+- Modules and imports
+- Tkinter widgets and variables
+- Event-driven programming
+- Secure random generation
+- Clipboard operations
+- GUI theme management
 
 ---
 
@@ -304,13 +285,45 @@ import string
 import secrets
 ```
 
-### External Module
+### External Library
 
 ```python
 import pyperclip
 ```
+
+The built-in modules provide the interface, character sets, and secure random generation. The external `pyperclip` library handles clipboard operations.
+
 ---
 
+## 📁 Project Structure
+
+The repository can be organized as follows:
+
+```text
+OIBSIP_Python_Task3/
+│
+├── random_pass.py
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, I gained practical experience with:
+
+- Developing a desktop application using Python and Tkinter.
+- Generating passwords using cryptographically secure randomness.
+- Working with user input and validation.
+- Implementing password strength feedback.
+- Integrating clipboard functionality.
+- Managing session-based password history.
+- Designing a graphical interface with light and dark themes.
+- Organizing a Python project for GitHub.
+
+---
 
 ## 👨‍💻 Author
 
@@ -318,4 +331,17 @@ import pyperclip
 
 B.Tech — Computer Science and Engineering (AI & ML)
 
-© 2026 Jisan Ali
+**Internship:** Oasis Infobyte — Python Programming
+
+## 🔗 Project Links
+
+- **GitHub Repository:** [OIBSIP_Python_Task3](https://github.com/Jisan0178/OIBSIP_Python_Task3)
+- **Oasis Infobyte:** [Official Website](https://oasisinfobyte.com/)
+
+## 🎥 Demo Video
+
+- **Project Demonstration:** [Watch the Demo](https://lnkd.in/p/dUkjuUh9)
+
+---
+
+© 2026 Jisan Ali. All rights reserved.
