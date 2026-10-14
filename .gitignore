@@ -1,26 +1,47 @@
+# Python cache files
 __pycache__/
 *.py[cod]
 *$py.class
 
-.venv/
+# Virtual environments
 venv/
+.venv/
 env/
 ENV/
 
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and editor files
 .vscode/
 .idea/
 
-*.log
-*.tmp
-
+# Operating system files
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-passwords.txt
-history.txt
-.env
+# Log files
+*.log
 
+# Temporary files
+*.tmp
+*.bak
+
+# Build and distribution files
+build/
+dist/
+*.egg-info/
+
+# Test and coverage files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local password history or database files
 password_history.db
-password_history.db-journal
-password_history.db-shm
-password_history.db-wal
+*.db
+*.sqlite
+*.sqlite3
