@@ -343,5 +343,3 @@ B.Tech — Computer Science and Engineering (AI & ML)
 - **Project Demonstration:** [Watch the Demo](https://lnkd.in/p/dUkjuUh9)
 
 ---
-
-© 2026 Jisan Ali. All rights reserved.
